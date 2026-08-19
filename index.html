@@ -788,6 +788,7 @@ function App(){
         ),
         h("div",{className:"top-right"},
           h("button",{className:"install-btn",onClick:()=>setShowInstall(true)},"📲 Installer"),
+          h("button",{className:"icon-action",onClick:()=>{const d=localStorage.getItem("anime-tracker-v3")||"[]";const b=new Blob([d],{type:"application/json"});const u=URL.createObjectURL(b);const a=document.createElement("a");a.href=u;a.download="animes.json";a.click();},"📤"),
           h("button",{className:"icon-action",onClick:()=>setShowTheme(true)},"🎨"),
           h("button",{className:"icon-action",onClick:()=>setItems(p=>p.map(a=>({...a,imageState:"idle",image:null})))},"🔄"),
           h("button",{className:"btn-add",onClick:()=>setShowAdd(true)},"+  Ajouter")
